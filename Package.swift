@@ -1,28 +1,24 @@
-// swift-tools-version:5.1
-//===----------------------------------------------------------------------===//
-//
-// This source file is part of the Swift Algorithms open source project
-//
-// Copyright (c) 2020 Apple Inc. and the Swift project authors
-// Licensed under Apache License v2.0 with Runtime Library Exception
-//
-// See https://swift.org/LICENSE.txt for license information
-//
-//===----------------------------------------------------------------------===//
-
+// swift-tools-version:5.0
+// The swift-tools-version declares the minimum version of Swift required to build this package.
 import PackageDescription
 
 let package = Package(
     name: "WatchdogInspector",
+    platforms: [
+        .iOS(.v9),
+        .tvOS(.v9),
+        .watchOS(.v2),
+        .macOS(.v10_11),
+    ],
     products: [
         .library(
             name: "WatchdogInspector",
-            targets: ["WatchdogInspector"]
-        ),
+            targets: ["WatchdogInspector"]),
     ],
     targets: [
         .target(
-            name: "WatchdogInspector"
-        ),
-    ]
+            name: "WatchdogInspector",
+            dependencies: []),
+    ],
+    swiftLanguageVersions: [.v5]
 )
